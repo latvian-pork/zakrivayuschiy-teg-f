@@ -1,0 +1,1 @@
+https://github.com/latvian-pork/zakrivayuschiy-teg-f.git
