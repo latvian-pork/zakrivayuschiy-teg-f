@@ -32,24 +32,16 @@
 }
 
 .header {
-  padding-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
-}
-
-.card-list-item,
-.header {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-inline: auto;
   border: 2px solid var(--accent-color);
-  background-color: var(--bg-color);
-  inline-size: clamp(23.438rem, 16.2859rem + 30.5157vw, 43.75rem);
-}
-
-.header,
-.theme-menu__button {
+  padding-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   font-family: var(--accent-font), monospace;
   text-transform: uppercase;
+  background-color: var(--bg-color);
+  inline-size: clamp(23.438rem, 16.2859rem + 30.5157vw, 43.75rem);
 }
 
 .title {
@@ -72,7 +64,9 @@
 
 .theme-menu__button {
   position: relative;
+  font-family: var(--accent-font), monospace;
   font-size: 14px;
+  text-transform: uppercase;
 }
 
 .theme-menu__button:disabled {
@@ -114,12 +108,28 @@
   margin-inline: auto;
 }
 
+.content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .card-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
   margin-inline: auto;
+}
+
+.card-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: auto;
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+  inline-size: clamp(23.438rem, 16.2859rem + 30.5157vw, 43.75rem);
 }
 
 .card_title {
@@ -136,6 +146,8 @@
 .card_image {
   display: block;
   border-block: 2px solid var(--accent-color);
+  object-fit: cover;
+  object-position: center;
   transition: filter 0.3s;
   inline-size: 100%;
   block-size: 100%;
@@ -154,8 +166,8 @@
   font-size: 14px;
   text-shadow: -1px 0 var(--text-stroke-color), 0 1px var(--text-stroke-color),
     1px 0 var(--text-stroke-color), 0 -1px var(--text-stroke-color);
-  inset-inline-end: clamp(0.688rem, -0.3342rem + 4.3614vw, 1.563rem);
-  inset-block-start: clamp(0.688rem, -0.3342rem + 4.3614vw, 1.563rem);
+  inset-inline-end: clamp(11px, -0.3342rem + 4.3614vw, 25px);
+  inset-block-start: 25px;
   mix-blend-mode: hard-light;
 }
 
@@ -194,28 +206,6 @@
   font-size: 14px;
 }
 
-.animated-button:focus-visible {
-  box-shadow: 2px 2px 0 currentColor;
-  outline: none;
-  transition: box-shadow 0.3s;
-}
-
-.animated-button::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--accent-color);
-  transition: transform 0.5s ease-in-out;
-  transform: scaleX(0);
-  transform-origin: left;
-}
-
-.animated-button:hover::after {
-  transition: transform 0.5s ease-in-out;
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
 .button__text {
   position: relative;
   z-index: 2;
@@ -247,6 +237,7 @@
 }
 
 .save-button {
+  margin-block-start: 50px;
   padding: 15px 20px;
   background-color: var(--bg-color);
 }
@@ -260,10 +251,10 @@
 }
 
 .floppy {
+  flex-grow: 0;
+  flex-shrink: 0;
   inline-size: 21px;
   block-size: 21px;
-  flex-shrink: 0;
-  flex-grow: 0;
 }
 
 /* стили попапа */
@@ -369,4 +360,3 @@
     block-size: 28px;
   }
 }
-

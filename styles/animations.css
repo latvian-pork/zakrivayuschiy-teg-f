@@ -29,6 +29,28 @@
   }
 }
 
+.animated-button:focus-visible {
+  box-shadow: 2px 2px 0 currentColor;
+  outline: none;
+  transition: box-shadow 0.3s;
+}
+
+.animated-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.animated-button:hover::after {
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 /* стили и анимация svg-иконки */
 
 .sparks {
